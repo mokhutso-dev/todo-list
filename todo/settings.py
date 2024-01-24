@@ -87,12 +87,6 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -107,28 +101,6 @@ DATABASES = {
     )
 }
 
-# DATABASES = {
-#     'default': dj_database_url.config(),
-# }
-
-# DATABASES = {
-#     "default": {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         "NAME": os.getenv("POSTGRES_DB"),
-#         "USER": os.getenv("POSTGRES_USER"),
-#         "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-#         "HOST": 'postgresql',
-#         "PORT": os.getenv("POSTGRES_PORT"),
-#         # "HOST": os.getenv("POSTGRES_HOST"),
-#     }
-# }
-
-
-
-
-# database_url = os.environ.get("DATABASE_URL")
-# database_url = os.getenv('DATABASE_URL')
-# DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 # Password validation
