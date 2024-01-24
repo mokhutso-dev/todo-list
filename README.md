@@ -8,5 +8,5 @@ print(list1.item_set.all())
 list1.item_set.create(text="Go to the mall", complete=False)
 
 removed:
-
 psycopg2==2.9.9
+psycopg2-binary==2.9.6
