@@ -8,6 +8,9 @@ from .forms import CreateNewList
 # 	ls = ToDoList.objects.get(id=id)
 # 	return render(request, "list.html", {"ls":ls})
 
+"""
+    Add items
+"""
 def index(request, id):
     ls = ToDoList.objects.get(id=id)
     
@@ -39,7 +42,11 @@ def index(request, id):
     # return render(request, "list.html", {"ls":ls})
     return render(request, "index.html", {"ls": ls})
 
+
 def create(request):
+    """
+    Create a new todo list
+    """
     # request.user
     if request.method == "POST":
         form = CreateNewList(request.POST)
@@ -57,8 +64,21 @@ def create(request):
     return render(request, "create.html", {"form":form})
     
 def home(request):
-	return render(request, "home.html", {})
+    """            
+        Welcome to the amazing list
+    """
+    return render(request, "home.html", {})
 
-def view(request):
-	l = ToDoList.objects.all()
-	return render(request, "view.html", {"lists":l})
+def viewId(request):
+    """_summary_
+        Get list by username or id
+    """
+    list = ToDoList.objects.all()
+    return render(request, "viewId.html", {"lists":list})
+
+def viewAll(request):
+    """_summary_
+        Get all the list
+    """
+    list = ToDoList.objects.all()
+    return render(request, "viewAll.html", {"lists":list})

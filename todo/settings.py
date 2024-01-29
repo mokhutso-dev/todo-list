@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-%t4bx5hpksq45bq+-jlp(yojp=vadoyt=jx=*&q+ukk5wusohg'
+SECRET_KEY = 'django-insecure-%t4bx5hpksq45bq+-jlp(yojp=vadoyt=jx=*&q+ukk5wusohg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 # Load environment variables from .env file
 load_dotenv()
@@ -33,10 +33,10 @@ load_dotenv()
 # Access environment variables
 # SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+# SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # DEBUG = os.getenv('DEBUG')
-DEBUG = 'RENDER' not in os.environ
+# DEBUG = 'RENDER' not in os.environ
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 
@@ -104,7 +104,16 @@ DATABASES = {
         default=os.getenv('DATABASE_URL') ,
         conn_max_age=600
     )
+    
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 

@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
-{% block title %} Create New List {% endblock %}
+{% block title %} create {% endblock %}
 
 {% block content %}
-    <h3>Create a new List</h3>
+    {% if user.is_authenticated %}
+        <h4>Welcome back {{ user.username }}! </h4>
+    {% endif %}
+
+    <p>Create a new List</p>
 
     <form method="post" action="/create/" class="form-group">
         {% csrf_token %}

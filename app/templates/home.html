@@ -1,10 +1,116 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Amazing List</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block title %}
-Home
-{% endblock %}
+{% comment %} #473741;
+#614b54;
+#8a6a77;
+#c49698;
+#e8cac8; {% endcomment %}
 
-{% block content %}
-<h2>Hello there, welcome to 'amazing list' home page</h2>
-<p>Still under construction</p>
-{% endblock %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f3fa;
+}
+
+/* Style the header */
+.header {
+  background-color: #628ecb;
+  background-color: #022b42;
+  padding: 20px;
+  text-align: center;
+  color: #f0f3fa ;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #003554;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Amazing List</h1>
+  <p>Keeping it all checked</p>
+</div>
+
+{% if user.is_authenticated %}
+		{% comment %} <h4 sty>Welcome back {{ user.username }}!</h4> {% endcomment %}
+    <div class="topnav">
+        <a href="/create">Create</a>
+        <a href="/view">View</a>
+        <a href="/logout">Logout</a>
+    </div>
+	
+{% else %}
+    <div class="topnav">
+        <a href="/login">Login</a>
+    </div>
+		
+{% endif %}
+
+<div class="content">
+    <div class="row">
+        <div class="column">
+          <h2>About</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        
+        <div class="column">
+          <h2>How it works</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
