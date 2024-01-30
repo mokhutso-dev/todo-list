@@ -5,20 +5,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% comment %} #473741;
-#614b54;
-#8a6a77;
-#c49698;
-#e8cac8; {% endcomment %}
-
 <style>
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   background-color: #f0f3fa;
+}
+span{
+  font-weight: 700 ;
+}
+.enjoy{
+  font-family: monospace;
+  color:  #022b42;
+  font-weight: 700;
 }
 
 /* Style the header */
@@ -100,12 +101,21 @@ body {
     <div class="row">
         <div class="column">
           <h2>About</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          <p><span>Amazing list</span> is a web app that allows users to create an account, 
+            login and logout from the app without losing their data. Everytime the user logout 
+            their created todo lists are saved to the database and retrieved when they login again. </p>
+          
+          <p class="enjoy"> Login and enjoy!</p>
         </div>
         
         <div class="column">
           <h2>How it works</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          <p><span>Login: </span>using username and password used to create an account</p>
+          <h3>What you can do</h3>
+          <ul>
+            <li>Create your own todo list</li>
+            <li>View all the lists created</li>
+          </ul>
         </div>
     </div>
 </div>
