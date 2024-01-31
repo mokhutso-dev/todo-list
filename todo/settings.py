@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%t4bx5hpksq45bq+-jlp(yojp=vadoyt=jx=*&q+ukk5wusohg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 # Load environment variables from .env file
 load_dotenv()
