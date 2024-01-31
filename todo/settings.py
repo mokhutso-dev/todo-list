@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-%t4bx5hpksq45bq+-jlp(yojp=vadoyt=jx=*&q+ukk5wusohg
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
+DEBUG = False
 
 # Load environment variables from .env file
 load_dotenv()
@@ -35,7 +36,7 @@ load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
-DEBUG = os.getenv('DEBUG')
+# DEBUG = os.getenv('DEBUG')
 # DEBUG = 'RENDER' not in os.environ
 
 DATABASE_URL = os.getenv('DATABASE_URL')
@@ -115,18 +116,14 @@ database_url = os.getenv('DATABASE_URL')
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         'NAME': 'postgresql',
-        # "USER": '',
-        # "PASSWORD": '',
-        # "HOST": '',
-        # "PORT": '',
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT"),
     }
 }
-
-DATABASES['default'] =  dj_database_url.config(
-        default=os.getenv('DATABASE_URL') ,
-        conn_max_age=600 ) 
 
 
 
