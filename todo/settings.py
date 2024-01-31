@@ -100,14 +100,12 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 database_url = os.getenv('DATABASE_URL') 
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL') ,
-        conn_max_age=600
-    )
-    
-}
-
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.getenv('DATABASE_URL') ,
+#         conn_max_age=600
+#     ) 
+# }
 
 # DATABASES = {
 #     'default': {
@@ -115,6 +113,21 @@ DATABASES = {
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        'NAME': 'postgresql',
+        "USER": '',
+        "PASSWORD": '',
+        "HOST": '',
+        "PORT": '',
+    }
+}
+
+DATABASES['default'] =  dj_database_url.config(
+        default=os.getenv('DATABASE_URL') ,
+        conn_max_age=600 ) 
 
 
 
